@@ -13,6 +13,14 @@ This is a fork of(https://github.com/jarredou/MVSEP-MDX23-Colab_v2), upgraded wi
 
 ---
 
+
+## 🖼️ WebUI Preview
+
+<p align="center">
+  <img src="assets/webui_screenshot.png" alt="MVSEP-MDX23 Studio WebUI Screenshot" width="900"/>
+</p>
+
+
 ## 📌 TODO
 
 - [ ] 🐳 Docker support (containerized deployment)
