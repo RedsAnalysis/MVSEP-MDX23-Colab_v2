@@ -29,7 +29,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### 2. Clone and Setup
 
 ```Bash
-git clone https://github.com/YOUR_USERNAME/MVSEP-MDX23-Studio.git
+git clone [https://github.com/YOUR_USERNAME/MVSEP-MDX23-Studio.git](https://github.com/RedsAnalysis/MVSEP-MDX23-Colab_v2.git)
 cd MVSEP-MDX23-Studio
 ```
 # This will automatically download the correct Python version and install all locked dependencies
@@ -61,10 +61,10 @@ This engine ensembles (combines) multiple models to achieve the highest possible
 Depending on your source audio, adjust the Blending Power and Engineering Tab settings in the WebUI:
 
 **Use Case	Model Mix (Power)	Advanced Settings**
-Studio Pop / Rap	BSRoformer (100) + MelRoformer (80)	BigShifts: 3
-Acoustic / Singer-Songwriter	MelRoformer (100) + BSRoformer (60)	Filter Vocals: OFF
-Anime / Cinematic Dialogue	BSRoformer (100) + MelRoformer (50)	BigShifts: 7, Filter Vocals: ON (<50Hz)
-Karaoke / Backing Track	InstVoc (100) + InstHQ4 (100)	Select "Instrumental" Output Only
+- Studio Pop / Rap	BSRoformer (100) + MelRoformer (80)	BigShifts: 3
+- Acoustic / Singer-Songwriter	MelRoformer (100) + BSRoformer (60)	Filter Vocals: OFF
+- Anime / Cinematic Dialogue	BSRoformer (100) + MelRoformer (50)	BigShifts: 7, Filter Vocals: ON (<50Hz)
+- Karaoke / Backing Track	InstVoc (100) + InstHQ4 (100)	Select "Instrumental" Output Only
 
 ## 📜 Credits & Lineage
 This project stands on the shoulders of giants. Massive thanks to the original researchers, model trainers, and developers:
