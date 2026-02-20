@@ -13,6 +13,10 @@ This is a fork of(https://github.com/jarredou/MVSEP-MDX23-Colab_v2), upgraded wi
 
 ---
 
+## 📌 TODO
+
+- [ ] 🐳 Docker support (containerized deployment)
+
 ## 🚀 Installation & Launch
 
 This project uses(https://docs.astral.sh/uv/) for robust dependency management.
