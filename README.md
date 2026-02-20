@@ -1,84 +1,77 @@
-[![ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/Q5Q811R5YI)  
-# MVSep-MDX23 Colab Fork v2.5
+# 🎚️ MVSEP-MDX23 Studio (WebUI Edition)
 
-Adaptation of MVSep-MDX23 algorithm for Colab, with few tweaks:
+A modernized, local WebUI for state-of-the-art music source separation. 
 
-https://colab.research.google.com/github/jarredou/MVSEP-MDX23-Colab_v2/blob/v2.5/MVSep-MDX23-Colab.ipynb  
-<br>  
+This is a fork of(https://github.com/jarredou/MVSEP-MDX23-Colab_v2), upgraded with a **Gradio Web Interface** and modern **`uv` dependency management**. It uses powerful Ensemble Neural Networks to split audio into Vocals, Instrumentals, Drums, Bass, and Other.
 
-Recent changes:  
+## ✨ New Features in this Version
+* **Professional WebUI:** A clean, intuitive interface powered by Gradio.
+* **The "Model Mixer":** Seamlessly blend the power of multiple AI models using 0-100% sliders.
+* **Advanced Engineering Controls:** Easily tweak BigShifts, overlap buffers, gain staging, and low-end vocal filtering directly from the UI.
+* **Smart Stem Logic:** Automatically optimizes processing speed if you only request Vocal and Instrumental stems.
+* **Modern Dependency Management:** Powered by `uv` for lightning-fast, reproducible, and locked installations (no more broken environments).
 
+---
 
-**v2.5.1** *(24 SEPT 2024)*  
-* better memory management (use `--large_gpu` to keep all models in memory during folder batch processing)
+## 🚀 Installation & Launch
 
-**v2.5** *(13 AUG 2024)*  
-* Kim's MelBand-Roformer model added  
+This project uses(https://docs.astral.sh/uv/) for robust dependency management.
 
+### 1. Install `uv` (if you haven't already)
+**Windows:**
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
 
-**v2.4** *(7 APR 2024)*  
-* BS-Roformer models from viperx added
-* MDX-InstHQ4 model added as optionnal
-* Flac output
-* Control input volume gain
-* Filter vocals below 50Hz option
-* Better chunking algo (no clicks)
-* Some code cleaning
+**MacOS / Linux:**
+```Bash
+curl -LsSf https://astral.sh/uv/install.sh | sh 
 
-</font>
-<br>
+### 2. Clone and Setup
 
-<details>
-    <summary>Full changelog :</summary>
-<br>
-<font size=2>
-<br>
+```Bash
+git clone https://github.com/YOUR_USERNAME/MVSEP-MDX23-Studio.git
+cd MVSEP-MDX23-Studio
 
-[**v2.3**](https://github.com/jarredou/MVSEP-MDX23-Colab_v2/tree/v2.3)
-* HQ3-Instr model replaced by VitLarge23 (thanks to MVSep)
-* Improved MDXv2 processing (thanks to Anjok)
-* Improved BigShifts algo (v2)
-* BigShifts processing added to MDXv3 & VitLarge
-* Faster folder batch processing
+# This will automatically download the correct Python version and install all locked dependencies
+uv sync
 
-[**v2.2.2**](https://github.com/jarredou/MVSEP-MDX23-Colab_v2/tree/v2.2)
-* Improved MDXv3 chunking code (thanks to HymnStudio)
-* D1581 demo model replaced by new InstVocHQ MDXv3 model.
-<br>
+### 3. Launch the WebUI
+```Bash
+uv run webui.py
 
-**v2.2.1**
-* Added custom weights feature
-* Fixed some bugs
-* Fixed input: you can use a file or a folder as input now
-<br>
+Open your browser and navigate to http://localhost:7860.
+(Note: The first time you run an extraction, the backend will automatically download the required model checkpoint files into the models/ folder. This may take a few minutes depending on your internet connection).
 
-**v2.2**
-* Added MDXv3 compatibility
-* Added MDXv3 demo model D1581 in vocals stem multiband ensemble.
-* Added VOC-FT Fullband SRS instead of UVR-MDX-Instr-HQ3.
-* Added 2stems feature : output only vocals/instrum (faster processing)
-* Added 16bit output format option
-* Added "BigShift trick" for MDX models
-* Added separated overlap values for MDX, MDXv3 and Demucs
-* Fixed volume compensation fine-tuning for MDX-VOC-FT
-<br>
+🧠 The Models Explained
 
-[**v2.1 (by deton24)**](https://github.com/deton24/MVSEP-MDX23-Colab_v2.1)
-* Updated with MDX-VOC-FT instead of Kim Vocal 2
-<br>
+This engine ensembles (combines) multiple models to achieve the highest possible Signal-to-Distortion Ratio (SDR). Here is what each model does:
+🔪 BSRoformer (Band-Split Roformer): The Surgical Scalpel. The current king of clarity. It aggressively separates vocals from complex tracks, making it perfect for crisp Pop, Rap, or spoken dialogue.
 
-[**v2.0**](https://github.com/jarredou/MVSEP-MDX23-Colab_v2/tree/2.0)
-* Updated with new Kim Vocal 2 & UVR-MDX-Instr-HQ3 models
-* Folder batch processing
-* Fixed high frequency bleed in vocals
-* Fixed volume compensation for MDX models
-<br>
-</font>
-</details>
-<br>
+🧣 Kim MelRoformer: The Warm Blanket. Processes audio closer to how the human ear hears. It preserves the "breath," emotion, and warmth of a vocal track. Excellent for acoustics and ballads.
 
-Credits:
-* [ZFTurbo/MVSep](https://github.com/ZFTurbo/MVSEP-MDX23-music-separation-model)
-* Models by [Demucs](https://github.com/facebookresearch/demucs), [Anjok](https://github.com/Anjok07/ultimatevocalremovergui), [Kimberley Jensen](https://github.com/KimberleyJensen), [aufr33](https://github.com/aufr33) & viperx
-* Adaptation & tweaks by [jarredou](https://github.com/jarredou/MVSEP-MDX23-Colab_v2/)
-</font>
+🎤 InstVoc (MDX23C): The Karaoke Machine. Aggressively removes vocals from the instrumental floor. Best used when your main goal is a perfect backing track.
+
+🏋️ VitLarge: The Heavy Lifter. Treats audio like an image using Vision Transformers. Highly effective on dense, chaotic mixes like Heavy Metal or Rock.
+
+Demucs / MDX Legacy: Fallback models automatically used when generating 4-stem outputs (Drums, Bass, Other).
+
+🎛️ Recommended "Recipes" (Settings)
+
+Depending on your source audio, adjust the Blending Power and Engineering Tab settings in the WebUI:
+
+Use Case	Model Mix (Power)	Advanced Settings
+Studio Pop / Rap	BSRoformer (100) + MelRoformer (80)	BigShifts: 3
+Acoustic / Singer-Songwriter	MelRoformer (100) + BSRoformer (60)	Filter Vocals: OFF
+Anime / Cinematic Dialogue	BSRoformer (100) + MelRoformer (50)	BigShifts: 7, Filter Vocals: ON (<50Hz)
+Karaoke / Backing Track	InstVoc (100) + InstHQ4 (100)	Select "Instrumental" Output Only
+
+📜 Credits & Lineage
+This project stands on the shoulders of giants. Massive thanks to the original researchers, model trainers, and developers:
+Original Algorithm & Colab Adaptation:(https://github.com/jarredou/MVSEP-MDX23-Colab_v2/)
+Core MVSep Architecture:(https://github.com/ZFTurbo/MVSEP-MDX23-music-separation-model)
+Model Training & Architectures by:
+*(https://github.com/facebookresearch/demucs)
+*(https://github.com/Anjok07/ultimatevocalremovergui)
+*(https://github.com/KimberleyJensen) (MelRoformer)
+*(https://github.com/aufr33) & viperx (BSRoformer)
+
