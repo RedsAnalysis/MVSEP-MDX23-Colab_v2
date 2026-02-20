@@ -138,16 +138,23 @@ theme = gr.themes.Soft(
     block_title_text_weight="600"
 )
 
+# Custom CSS to force the UI to fill the screen
 css = """
 h1 { text-align: center; color: #3b82f6; }
-.contain { max-width: 1200px; margin: auto; }
+.gradio-container { max-width: 98% !important; }
 """
 
 # --- UI Construction ---
-with gr.Blocks(title="MVSEP-MDX23 Studio", theme=theme, css=css) as app:
+with gr.Blocks(title="MVSEP-MDX23 Studio", theme=theme, css=css, fill_width=True) as app:
+    
+    # Placing "Made By Red" floating perfectly in the top right corner
+    gr.HTML("""
+    <div style="position: absolute; top: 20px; right: 30px; font-size: 15px; font-weight: bold; z-index: 100;">
+        Made By <a href="https://github.com/RedsAnalysis" target="_blank" style="color: #3b82f6; text-decoration: none;">Red</a>
+    </div>
+    """)
     
     gr.Markdown("# 🎚️ MVSEP-MDX23 Studio")
-    gr.Markdown("### Professional Music Source Separation | Ensemble Logic")
 
     with gr.Row():
         
