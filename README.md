@@ -33,7 +33,9 @@ git clone https://github.com/RedsAnalysis/MVSEP-MDX23-Colab_v2.git
 cd MVSEP-MDX23-Studio
 ```
 # This will automatically download the correct Python version and install all locked dependencies
+```Bash
 uv sync
+```
 
 ### 3. Launch the WebUI
 ```Bash
