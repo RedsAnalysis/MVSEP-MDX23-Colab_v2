@@ -42,7 +42,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 ```Bash
 git clone https://github.com/RedsAnalysis/MVSEP-MDX23-Colab_v2.git
-cd MVSEP-MDX23-Studio
+cd MVSEP-MDX23-Colab_v2
 ```
 # This will automatically download the correct Python version and install all locked dependencies
 ```Bash
@@ -51,7 +51,7 @@ uv sync
 
 ### 3. Launch the WebUI
 ```Bash
-uv run webui.py
+uv run WebUI.py
 ```
 Open your browser and navigate to http://localhost:7860.
 (Note: The first time you run an extraction, the backend will automatically download the required model checkpoint files into the models/ folder. This may take a few minutes depending on your internet connection).
