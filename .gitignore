@@ -1,0 +1,33 @@
+# --- Python & System ---
+__pycache__/
+*.pyc
+.DS_Store
+.venv/
+venv/
+env/
+
+# --- Project Outputs ---
+outputs/
+
+# --- Heavy Model Files (Do NOT commit these) ---
+models/*.ckpt
+models/*.pth
+models/*.bin
+models/*.onnx
+models/*.pt
+
+# --- Downloaded Configs (These are downloaded at runtime) ---
+models/Kim_MelRoformer.yaml
+models/MDX23C-8KFFT-InstVoc_HQ.yaml
+models/model_bs_roformer*.yaml
+
+# --- IDE Settings ---
+.vscode/
+.idea/
+
+# --- UV / Dependency Management ---
+# If you decide to use uv.lock later, you usually DO commit it, 
+# but for now, we ignore local build artifacts.
+build/
+dist/
+*.egg-info/
