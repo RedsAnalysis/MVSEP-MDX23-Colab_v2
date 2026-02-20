@@ -43,7 +43,7 @@ Open your browser and navigate to http://localhost:7860.
 (Note: The first time you run an extraction, the backend will automatically download the required model checkpoint files into the models/ folder. This may take a few minutes depending on your internet connection).
 
 
-##🧠 The Models Explained
+## 🧠 The Models Explained
 
 This engine ensembles (combines) multiple models to achieve the highest possible Signal-to-Distortion Ratio (SDR). Here is what each model does:
 * **🔪 BSRoformer (Band-Split Roformer):** The Surgical Scalpel. The current king of clarity. It aggressively separates vocals from complex tracks, making it perfect for crisp Pop, Rap, or spoken dialogue.
@@ -56,7 +56,7 @@ This engine ensembles (combines) multiple models to achieve the highest possible
 
 * **Demucs / MDX Legacy:** Fallback models automatically used when generating 4-stem outputs (Drums, Bass, Other).
 
-##🎛️ Recommended "Recipes" (Settings)
+## 🎛️ Recommended "Recipes" (Settings)
 
 Depending on your source audio, adjust the Blending Power and Engineering Tab settings in the WebUI:
 
@@ -66,7 +66,7 @@ Acoustic / Singer-Songwriter	MelRoformer (100) + BSRoformer (60)	Filter Vocals: 
 Anime / Cinematic Dialogue	BSRoformer (100) + MelRoformer (50)	BigShifts: 7, Filter Vocals: ON (<50Hz)
 Karaoke / Backing Track	InstVoc (100) + InstHQ4 (100)	Select "Instrumental" Output Only
 
-##📜 Credits & Lineage
+## 📜 Credits & Lineage
 This project stands on the shoulders of giants. Massive thanks to the original researchers, model trainers, and developers:
 Original Algorithm & Colab Adaptation:(https://github.com/jarredou/MVSEP-MDX23-Colab_v2/)
 Core MVSep Architecture:(https://github.com/ZFTurbo/MVSEP-MDX23-music-separation-model)
