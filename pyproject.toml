@@ -1,0 +1,23 @@
+[project]
+name = "mvsep-mdx23-colab-v2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "beartype==0.14.1",
+    "demucs>=4.0.1",
+    "gradio>=6.6.0",
+    "librosa>=0.11.0",
+    "ml-collections>=1.1.0",
+    "numpy>=2.2.6",
+    "onnxruntime-gpu>=1.24.2",
+    "pyyaml>=6.0.3",
+    "rotary-embedding-torch==0.3.5",
+    "samplerate==0.1.0",
+    "scipy>=1.15.3",
+    "segmentation-models-pytorch==0.3.3",
+    "soundfile>=0.13.1",
+    "torch>=2.10.0",
+    "tqdm>=4.67.3",
+]
